@@ -94,9 +94,7 @@ the base 'watercolor' map alone looks very styled, and for any serious purposes 
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
+
 Now we will plot the data:
 ```
 chicagoheat <- ggmap(large_map,extent='device') +
