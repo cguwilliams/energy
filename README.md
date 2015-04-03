@@ -83,9 +83,24 @@ large_map <- get_stamenmap(bbox = c(left = -87.885169, bottom=41.643919,
                              zoom=13,maptype="toner")
 ggplot(large_map)
 ```
-How the map looks so far, without data plotted on it
-[insert image here]
+<a href="url"><img src="http://home.uchicago.edu/~pbwilliams/images/chicagowatercolor.png" align="left" height="480" ></a>
+
+the map alone looks very styled, and for any serious purposes should probably use something more subdued. I chose the watercolor map and zoomed into a small radius around my house to make a pretty header for my own webpage. A 'toner' or 'terrain' map is much more informative, and carries more contrast against the colors used in the map.
 Now we will plot the data
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 ```
 chicagoheat <- ggmap(large_map,extent='device') +
         geom_polygon(aes(x = long, y = lat, group = group, fill = value),
@@ -101,10 +116,13 @@ chicagoheat <- ggmap(large_map,extent='device') +
 
 chicagoheat
 ```
-While we have not worked in any other variable of interest at this time, it is a very cool looking map, and we can see that it looks about as expected if you know anything about the North-South, East-West devides of Chicago, and the brightest colors are downtown. I haven't plotted the legend in this version, but yellow corresponds to greater thermal units, while red correspondes to less. 
+While we have not worked in any other variable of interest at this time, it is a very cool looking map, and we can see that it looks about as expected if you know anything about the North-South, East-West devides of Chicago, and the brightest colors are downtown. I haven't plotted the legend in this version, but yellow corresponds to greater mean thermal units, while red corresponds to fewer mean thermal units. 
 
+I am now working to add additional layers, such as points of crime in the city, as well as to create a spreadsheet which can be used for explaining relationships among city-based variables. This is a unique challenge, as for example, energy is binned by census tract ID, while crime can at best best binned by community. It will be important to find a common way to bin them to look at relationships, while maintaining a high degree of granularity (there are over 36,000 census tracts to look at, while there are only around 70 communities in Chicago). The challengest are part of the fun and will update as more data are analyzed.
 
-<a href="url"><img src="http://home.uchicago.edu/~pbwilliams/images/chicagoheat.png" align="left" height="360" ></a>
+Here is what the map looks like. It's highly stylized for now, but that can be easily modified as more serious analyses move forward. It has also been slightly cropped from the full-size.
+
+<a href="url"><img src="http://home.uchicago.edu/~pbwilliams/images/chicagoheat.png" align="left" height="480" ></a>
 
 
 
