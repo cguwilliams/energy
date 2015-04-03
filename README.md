@@ -14,8 +14,9 @@ I would like to step through how this map was created, for anyone who may be int
 Data for this project were acquired from two sources:
 - Energy Data: [Chicago Public Data Portal] (https://data.cityofchicago.org/)
 - Chicago census tracts: [Census Tract Shape Files](https://www.census.gov/geo/maps-data/data/tiger-line.html)
-- [Stamenmaps](http://maps.stamen.com/#toner/12/37.7706/-122.3782). From within R.
-- 
+- The underlying map from [Stamenmaps](http://maps.stamen.com/#toner/12/37.7706/-122.3782). From within R.
+
+
 With these data in hand, I read each into R and began processing and eventual visualization. This process can be completed using other software, such as QGIS and Tilemill. Each software has its advantages but I liked doing it all in R because it was self-contained and allowed a high degree of control over parameters.
 
 ##The code
@@ -85,7 +86,7 @@ tract_poly$value  <- qcut(tract_poly[[toplot]],9)
 large_map <- get_stamenmap(bbox = c(left = -87.885169, bottom=41.643919,
                                     right = -87.523984, top = 42.023022),
                              zoom=13,maptype="toner")
-ggplot(large_map)
+ggplot(large_map)       #Previews base map
 ```
 the base 'watercolor' map alone looks very styled, and for any serious purposes should probably use something more subdued. I chose the watercolor map and zoomed into a small radius around my house to make a good looking header for my webpage (displayed here as a preview). A 'toner' or 'terrain' map is much more informative, and carries more contrast against the colors used in the map.
 <br>
@@ -106,7 +107,7 @@ chicagoheat <- ggmap(large_map,extent='device') +
               panel.background = element_blank(), axis.line = element_line(color = NA),
               axis.text = element_blank (),axis.ticks = element_blank(), axis.title = element_blank())
 
-chicagoheat
+chicagoheat     #preview the map in RStudio. I have found it faster to write it as a png file and preview that way
 ```
 While we have not worked in any other variable of interest at this time, it is a very cool looking map, and we can see that it looks about as expected if you know anything about the North-South, East-West devides of Chicago, and the brightest colors are downtown. I haven't plotted the legend in this version, but yellow corresponds to greater mean thermal units, while red corresponds to fewer mean thermal units. 
 
