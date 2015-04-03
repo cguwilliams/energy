@@ -83,13 +83,10 @@ large_map <- get_stamenmap(bbox = c(left = -87.885169, bottom=41.643919,
                              zoom=13,maptype="toner")
 ggplot(large_map)
 ```
-<a href="url"><img src="http://home.uchicago.edu/~pbwilliams/images/chicagowatercolor.png" align="left" height="480" ></a>
-
 the map alone looks very styled, and for any serious purposes should probably use something more subdued. I chose the watercolor map and zoomed into a small radius around my house to make a pretty header for my own webpage. A 'toner' or 'terrain' map is much more informative, and carries more contrast against the colors used in the map.
 Now we will plot the data
 <br>
-<br>
-<br>
+<a href="url"><img src="http://home.uchicago.edu/~pbwilliams/images/upperhyde.png" align="left" height="200" ></a><br>
 <br>
 <br>
 <br>
