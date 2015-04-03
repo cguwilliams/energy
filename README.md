@@ -83,8 +83,7 @@ large_map <- get_stamenmap(bbox = c(left = -87.885169, bottom=41.643919,
                              zoom=13,maptype="toner")
 ggplot(large_map)
 ```
-the map alone looks very styled, and for any serious purposes should probably use something more subdued. I chose the watercolor map and zoomed into a small radius around my house to make a pretty header for my own webpage. A 'toner' or 'terrain' map is much more informative, and carries more contrast against the colors used in the map.
-Now we will plot the data
+the base 'watercolor' map alone looks very styled, and for any serious purposes should probably use something more subdued. I chose the watercolor map and zoomed into a small radius around my house to make a good looking header for my webpage (displayed here as a preview). A 'toner' or 'terrain' map is much more informative, and carries more contrast against the colors used in the map.
 <br>
 <a href="url"><img src="http://home.uchicago.edu/~pbwilliams/images/upperhyde.png" align="left" height="200" ></a><br>
 <br>
@@ -98,6 +97,7 @@ Now we will plot the data
 <br>
 <br>
 <br>
+Now we will plot the data:
 ```
 chicagoheat <- ggmap(large_map,extent='device') +
         geom_polygon(aes(x = long, y = lat, group = group, fill = value),
